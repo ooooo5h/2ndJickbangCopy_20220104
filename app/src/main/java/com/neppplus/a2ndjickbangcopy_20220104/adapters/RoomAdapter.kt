@@ -1,12 +1,14 @@
 package com.neppplus.a2ndjickbangcopy_20220104.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.neppplus.a2ndjickbangcopy_20220104.R
+import com.neppplus.a2ndjickbangcopy_20220104.ViewRoomDetailActivity
 import com.neppplus.a2ndjickbangcopy_20220104.models.RoomData
 import org.w3c.dom.Text
 
@@ -34,6 +36,10 @@ class RoomAdapter(
 //            row  -> 안눌림
             row.setOnClickListener {
 
+                val myIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
+
+//                startActivity가 안됨 ==> mContext의 도움을 받자
+                mContext.startActivity(myIntent)
 
             }
 

@@ -38,6 +38,9 @@ class RoomAdapter(
 
                 val myIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
 
+//                방 정보를 들고 가야됨
+                myIntent.putExtra("room", data)
+
 //                startActivity가 안됨 ==> mContext의 도움을 받자
                 mContext.startActivity(myIntent)
 

@@ -1,9 +1,11 @@
 package com.neppplus.a2ndjickbangcopy_20220104.adapters
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.neppplus.a2ndjickbangcopy_20220104.R
 import com.neppplus.a2ndjickbangcopy_20220104.models.RoomData
 
 class RoomAdapter(
@@ -18,6 +20,8 @@ class RoomAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
+        val row = LayoutInflater.from(mContext).inflate(R.layout.room_list_item, parent, false)
+        return MyViewHolder(row)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

@@ -15,7 +15,7 @@ class RoomAdapter(
     val mList : List<RoomData>
 ) : RecyclerView.Adapter<RoomAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(row : View) : RecyclerView.ViewHolder(row) {
+    inner class MyViewHolder(val row : View) : RecyclerView.ViewHolder(row) {
 
 
         val txtPrice = row.findViewById<TextView>(R.id.txtPrice)
@@ -28,6 +28,15 @@ class RoomAdapter(
             txtAddressAndFloor.text = "${data.address}, ${data.getFormattedFloor()}"
 
             txtPrice.text = data.getFormattedPrice()
+
+
+//             리싸이클러뷰의 한 줄이 눌리면 이벤트 처리
+//            row  -> 안눌림
+            row.setOnClickListener {
+
+
+            }
+
         }
 
 

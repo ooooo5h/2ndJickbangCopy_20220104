@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.neppplus.a2ndjickbangcopy_20220104.R
 import com.neppplus.a2ndjickbangcopy_20220104.models.RoomData
+import org.w3c.dom.Text
 
 class RoomAdapter(
     val mContext : Context,
@@ -14,6 +15,16 @@ class RoomAdapter(
 ) : RecyclerView.Adapter<RoomAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(row : View) : RecyclerView.ViewHolder(row) {
+
+
+        val txtPrice = row.findViewById<Text>(R.id.txtPrice)
+        val txtAddressAndFloor = row.findViewById<Text>(R.id.txtAddressAndFloor)
+        val txtDescription = row.findViewById<Text>(R.id.txtDescription)
+
+        fun bind(data: RoomData) {
+
+            txtDescription.text = data.description
+        }
 
 
     }
@@ -25,6 +36,8 @@ class RoomAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        holder.bind( mList[position])
 
     }
 
